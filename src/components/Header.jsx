@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import SearchInput from './SearchInput';
 
 const Header = ({ currentPage, onNavigate }) => {
   const navItems = [
@@ -8,14 +9,14 @@ const Header = ({ currentPage, onNavigate }) => {
     { id: 'lecturers', label: 'Лекторы' },
   ];
 
+  const searchInputRef = useRef(null);
+
   return (
     <header className="header">
-      {/* Логотип слева */}
       <div className="header-logo" onClick={() => onNavigate('home')}>
         Учебная платформа
       </div>
       
-      {/* Навигация по центру */}
       <nav className="header-nav">
         {navItems.map((item) => (
           <button
@@ -28,13 +29,14 @@ const Header = ({ currentPage, onNavigate }) => {
         ))}
       </nav>
 
-      {/* Правая часть: Поиск + Кнопки */}
       <div className="header-actions">
-        <input 
-          type="text" 
+        <SearchInput 
+          ref={searchInputRef} 
           placeholder="Поиск лектора..." 
-          className="search-input" 
         />
+        <button onClick={() => searchInputRef.current.focus()}>
+          Фокус на поле
+        </button>
         <button className="btn-register">Регистрация</button>
         <button className="btn-login">Войти</button>
       </div>
