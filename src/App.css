@@ -1,0 +1,315 @@
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* --- ФИНАЛЬНЫЙ Header (с градиентом) --- */
+.header {
+  /* Используем ваши цвета. Направление 90deg (слева направо). 
+     Если хотите сверху вниз, замените на 180deg */
+  background: linear-gradient(90deg, #9DB1D2 0%, #8CB6FB 50%, #ADACAA 100%);
+  padding: 15px 40px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-radius: 0 0 8px 8px;
+}
+
+/* ... (остальные стили для .header-logo, .header-nav, .search-input, .btn-register, .btn-login оставьте без изменений, они подойдут) ... */
+
+/* Логотип */
+.header-logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Навигация - убрали серый фон, который портил вид */
+.header-nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.header-nav button {
+  background: none;
+  border: none;
+  font-size: 17px;
+  color: white;
+  cursor: pointer;
+  padding: 5px 0;
+  white-space: nowrap; /* Чтобы "О нас" не переносилось */
+  transition: opacity 0.3s;
+}
+
+.header-nav button:hover {
+  opacity: 0.8;
+}
+
+/* Активная вкладка - просто жирный шрифт и подчеркивание, как в макете */
+.header-nav button.active {
+  font-weight: bold;
+  border-bottom: 2px solid white;
+}
+
+/* Правая часть (Поиск и кнопки) */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Поле поиска - исправлено, текст виден */
+.search-input {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  outline: none;
+  width: 200px;
+  background-color: white;
+  color: #333; /* Темно-серый текст */
+}
+
+.search-input::placeholder {
+  color: #888;
+}
+
+/* Кнопка Регистрация */
+.btn-register {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.btn-register:hover {
+  background-color: white;
+  color: #8eb4dc;
+}
+
+/* Кнопка Войти */
+.btn-login {
+  background-color: white;
+  color: #8eb4dc;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  padding: 8px 25px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+
+.btn-login:hover {
+  opacity: 0.9;
+}
+
+/* --- Обновленный Hero --- */
+.hero {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.hero-image {
+  flex: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 28px;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* --- ОГРОМНАЯ кнопка в Hero --- */
+.btn-primary {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  /* Значительно увеличиваем отступы */
+  padding: 22px 70px; 
+  /* Увеличиваем шрифт */
+  font-size: 20px;    
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 12px; /* Более скругленные углы */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 86, 179, 0.4); /* Заметная тень */
+  letter-spacing: 1px; /* Немного разряженный текст для солидности */
+}
+
+.btn-primary:hover {
+  background-color: #003d82;
+  transform: translateY(-3px); /* Кнопка "подпрыгивает" */
+  box-shadow: 0 10px 20px rgba(0, 86, 179, 0.5);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px); /* Эффект нажатия */
+  box-shadow: 0 4px 10px rgba(0, 86, 179, 0.4);
+}
+
+.hero-features {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: #444;
+}
+
+.feature-icon {
+  color: #0056b3;
+  font-weight: bold;
+}
+
+/* --- Обновленный блок "О нас" --- */
+.about-section {
+  margin-bottom: 60px;
+  padding: 40px;
+  background-color: #fcfcfc; /* Очень светлый фон */
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.about-header {
+  margin-bottom: 30px;
+}
+
+.about-header h2 {
+  font-size: 28px;
+  color: #222;
+  /* Свой стиль шрифта, как просили в комментарии */
+  font-family: 'Georgia', serif; 
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.about-line {
+  width: 60px;
+  height: 4px;
+  background-color: #0056b3;
+  border-radius: 2px;
+}
+
+.about-content {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-text {
+  flex: 2;
+}
+
+.about-lead {
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  /* Красивый курсив для первого абзаца */
+  font-style: italic; 
+}
+
+.about-text p:not(.about-lead) {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.7;
+}
+
+.about-stats {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #0056b3;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+  font-size: 26px;
+  font-weight: bold;
+  color: #0056b3;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #777;
+}
+
+/* --- Обновленные Лекторы --- */
+.lecturers-section h2 { font-size: 24px; margin-bottom: 20px; }
+.lecturer-card { display: flex; gap: 30px; border: 1px solid #eee; border-radius: 8px; padding: 20px; margin-bottom: 20px; background: white; }
+.lecturer-photo-container { width: 250px; flex-shrink: 0; display: flex; flex-direction: column; }
+.lecturer-photo { width: 100%; height: 250px; background-color: #ccc; object-fit: cover; border-radius: 4px; }
+.lecturer-photo-placeholder { width: 100%; height: 250px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center; text-align: center; color: #666; font-size: 14px; border-radius: 4px; }
+.blue-underline { height: 4px; background-color: #0056b3; width: 100%; margin-top: 5px; }
+.lecturer-info { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+
+.lecturer-header-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+.lecturer-header-info h3 { font-size: 22px; margin-bottom: 0; }
+.lecturer-rating { font-size: 18px; font-weight: bold; color: #f39c12; background: #fdf3e1; padding: 4px 10px; border-radius: 20px; }
+.lecturer-rating .star { font-size: 16px; }
+
+.lecturer-info .role { font-weight: bold; color: #0056b3; margin-bottom: 15px; }
+
+.lecturer-tags { display: flex; gap: 8px; margin-top: 15px; flex-wrap: wrap; }
+.tag { background-color: #eef4fb; color: #0056b3; padding: 4px 12px; border-radius: 16px; font-size: 13px; font-weight: 500; }
+
+.lecturer-extra { margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ccc; font-style: italic; color: #555; }
+
+/* Footer */
+.footer { background-color: #333; color: white; text-align: center; padding: 20px 0; margin-top: 50px; border-radius: 8px 8px 0 0; }
